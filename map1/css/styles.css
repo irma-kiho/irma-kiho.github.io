@@ -1,0 +1,31 @@
+.banner img {
+  width: 100%;
+  height: auto;
+}
+nav a {
+  margin-right: 15px;
+  color: purple;
+  text-decoration: underline;
+}
+nav a.active {
+  color: red;
+  text-decoration: none;
+}
+div h1 {
+	color: gray;
+	text-align: center;
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
+div container {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+#map {
+	height: 700px;
+}
+footer {
+	padding: 5px;
+	background-color: gray;
+	color: white;
+}
