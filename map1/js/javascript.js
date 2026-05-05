@@ -34,7 +34,17 @@ function polygonStyle(feature) {
     color: 'grey',
   }
 }
-
+function createCircle(feature, latlng) {
+  let options = {
+    radius: 5,
+    fillColor: 'red',
+    fillOpacity: 0.5,
+    color: 'red',
+    weight: 1,
+    opacity: 1,
+  }
+  return L.circleMarker(latlng, options)
+}
 async function addDistrictsGeoJson(url) {
   const response = await fetch(url)
   const data = await response.json()
@@ -44,3 +54,11 @@ async function addDistrictsGeoJson(url) {
   })
   polygons.addTo(map)
 } addDistrictsGeoJson('geojson/tartu_city_districts_edu.geojson')
+async function addCelltowersGeoJson(url) {
+  const response = await fetch(url)
+  const data = await response.json()
+  const markers = L.geoJson(data, {
+	pointToLayer: createCircle,
+  })
+  circles.addTo(map)
+} addCelltowersGeoJson('geojson/tartu_city_celltowers_edu.geojson')
